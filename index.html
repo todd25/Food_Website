@@ -1,0 +1,177 @@
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+.homepage {
+
+  background-image: linear-gradient( rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.45) ),
+  url("https://static1.squarespace.com/static/5685a06669492ea07bb9b05d/t/5702d1922b8ddeaf55815b1f/1459802521539/Angel+Food-+High+Res-6766.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* .title {
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+} */
+.pics {
+    max-width: 50%;
+    height: auto;
+    width: 32%;
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.search {
+  width: 100%;
+  position: relative
+}
+
+#second {
+  float: left;
+  width: 80%;
+  border: 3px solid #F0F8FF;
+  padding: 5px;
+  height: 45px;
+  border-radius: 4px;
+  outline: none;
+  color: #9DBFAF;
+  font-size: 23px;
+  margin-left: 20px;
+}
+
+#second:focus{
+  color: #696969;
+}
+
+#thir {
+  background-color: DodgerBlue;
+   color: white;
+   padding: 10.5px 12.5px;
+   font-size: 22px;
+   cursor: pointer;
+   /* height: 19px;
+   width: 20px; */
+   margin-left: 2px;
+   border-radius: 5px;
+   border: 1px solid #7eacf7;
+
+  /* position: absolute;
+  right: -0px;
+  width: 80px;
+  height: 45px;
+  border: 1px solid #000000;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px; */
+}
+
+/*Resize the wrap to see the search bar change!*/
+.bar{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+    $("#thir").click(function(){
+      $('html, body').animate({
+          scrollTop: $("#fimg").offset().top
+      }, 2000);
+    });
+});
+
+function submit(){
+  var x = document.getElementById("first").value;
+  document.getElementById("as").style.display = "block";
+    if (x == "Italian") {
+        // document.getElementById('display').innerHTML = Date();
+        console.log(Date());
+        document.getElementById("fimg").src = "https://s3-media4.fl.yelpcdn.com/bphoto/7DRvj7sNybLV-FVVIsw6og/o.jpg";
+        document.getElementById("simg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/uG7gwQQriyufayXmOxinQw/o.jpg";
+        document.getElementById("timg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/liI4dg50uWpGbzns_MzgkA/o.jpg";
+        document.getElementById("fourimg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/DNyDL1ZnGkMcTBsNwfoZCA/o.jpg";
+        document.getElementById("fiveimg").src = "https://s3-media4.fl.yelpcdn.com/bphoto/pl2qfdmcRpw5p5Y8Oi_VQQ/o.jpg";
+        document.getElementById("siximg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/HeQgbqtMOpjsVqMCNEauKw/o.jpg";
+        document.getElementById("sevenimg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/DNyDL1ZnGkMcTBsNwfoZCA/o.jpg";
+        document.getElementById("eightimg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/DNyDL1ZnGkMcTBsNwfoZCA/o.jpg";
+        document.getElementById("nineimg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/DNyDL1ZnGkMcTBsNwfoZCA/o.jpg";
+        document.getElementById("tenimg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/DNyDL1ZnGkMcTBsNwfoZCA/o.jpg";
+        document.getElementById("elevenimg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/DNyDL1ZnGkMcTBsNwfoZCA/o.jpg";
+        // document.getElementById("fimg").scrollIntoView()
+    }
+
+    else{
+      console.log("hello");
+    }
+}
+</script>
+
+<body>
+<div class="homepage">
+  <div class="title">
+    <img style ="height: auto; width: 32%; display: block; margin-left: auto; margin-right: auto; padding: 225;" src = "dishit_transparent.png">
+    <div class="bar">
+      <div class="search">
+        <select id="first" style="display:none">
+          <option value="Italian">Italian</option>
+          <option value="American">American</option>
+          <option value="Chinese">Chinese</option>
+          <option value="Mexican">Mexican</option>
+        </select>
+        <input type="text" id="second" value=" Downtown,LA" autocomplete="on">
+        <!-- <input > -->
+        <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+        <i type= "button" name="third" id ="thir" value="Search" onclick="submit()" class="fa fa-search"></i>
+      <p id="display"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="as" class="three restauraunt" style = "margin-top: 6%; display: none;">
+  <img id = "fimg" class = "pics" style = "margin-left: 1%;">
+  <img id = "simg" class = "pics">
+  <img id = "timg" class = "pics">
+  <img id = "fourimg" class = "pics" style = "margin-left: 1%;">
+  <img id = "fiveimg" class = "pics">
+  <img id = "siximg" class = "pics">
+  <img id = "sevenimg" class = "pics" style = "margin-left: 1%;">
+  <img id = "eightimg" class = "pics">
+  <img id = "nineimg" class = "pics">
+  <img id = "tenimg" class = "pics" style = "margin-left: 1%;">
+  <img id = "elevenimg" class = "pics">
+
+
+</div>
+</body>
+</html>
