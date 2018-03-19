@@ -1,5 +1,7 @@
 <html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 <style>
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 body{
@@ -10,6 +12,53 @@ body, html {
     height: 100%;
     margin: 0;
   }
+.text {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+
+
+#firstDiv {
+    width: 33%;
+    height: 100%;
+    overflow: hidden;
+    float: left;
+
+}
+#secondDiv {
+    margin-left: 0.5%;
+    width: 33%;
+    height: 100%;
+    overflow: hidden;
+    float: left;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5));
+}
+#thirdDiv {
+  margin-left: 0.5%;
+    width: 33%;
+    height: 100%;
+    overflow: hidden;
+    float: left;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5));
+}
+
+.rest {
+    /* width: 50%;
+    height: 50%; */
+    height: 100%;
+    width: auto;
+    margin-left: -450px;
+    float: left;
+
+    /* margin: 0px, 100px, 100px, 0px */
+    /* width: 32%; */
+    /* position: absolute; */
+    /* height: 100%; */
+    /* clip: rect(0px,300px,500px,0px); */
+}
 
 .homepage {
 
@@ -24,6 +73,7 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 /* .title {
   color: white;
   text-align: center;
@@ -73,20 +123,18 @@ body, html {
    margin-left: 2px;
    border-radius: 5px;
    border: 1px solid #7eacf7;
-
-  /* position: absolute;
-  right: -0px;
-  width: 80px;
-  height: 45px;
-  border: 1px solid #000000;
-  background: #00B4CC;
-  text-align: center;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 20px; */
 }
 
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
 /*Resize the wrap to see the search bar change!*/
 .bar{
   width: 30%;
@@ -96,6 +144,102 @@ body, html {
   transform: translate(-50%, -50%);
 }
 
+#fimg {
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+#dfirst:hover #fimg {
+  opacity: 0.3;
+}
+
+#dfirst:hover .middle {
+  opacity: 1;
+}
+
+
+#choose_one {
+  position: relative;
+    /* text-align: center; */
+    color: white;
+}
+
+
+/* #firstDiv:hover #secondR {
+  opacity: 0.1;
+  transition: .5s ease;
+}
+#firstDiv:hover  */
+
+
+#firstDiv:hover #firstR {
+  opacity: 0.3;
+  transition: .5s ease;
+}
+
+
+#firstDiv:hover .left_text {
+  opacity: 1;
+  transition: .5s ease;
+}
+
+
+
+
+
+
+
+#secondDiv:hover #secondR {
+  opacity: 0.3;
+  transition: .5s ease;
+}
+#secondDiv:hover .center_text {
+  opacity: 1;
+  transition: .5s ease;
+}
+
+
+#thirdDiv:hover #thirdR {
+  opacity: 0.3;
+  transition: .5s ease;
+}
+#thirdDiv:hover .right_text {
+  opacity: 1;
+  transition: .5s ease;
+}
+
+
+.center_text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  font-family: "Tangerine", serif;
+}
+.left_text {
+  position: absolute;
+  top: 30%;
+  left: 16%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  font-size: 80px;
+  font-family: "Tangerine", serif;
+}
+.right_text {
+  position: absolute;
+  top: 30%;
+  left: 83%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  font-size: 80px;
+  font-family: "Tangerine", serif;
+}
+
+
+
 
 </style>
 
@@ -103,17 +247,26 @@ body, html {
 </script>
 <script>
 $(document).ready(function(){
-    $("#thir").click(function(){
+    $("#secondR").click(function(){
+      document.getElementById("firstR").style.backgroundImage = "linear-gradient( rgba(0, 0, 0, 1.30), rgba(0, 0, 0, 1.45)), src = 'https://cdn.vox-cdn.com/thumbor/YIg1m5s_0bEwMjLoa7lBzZoph20=/0x0:2000x1335/2820x1586/filters:focal(840x508:1160x828):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/58343745/2018_01_14_NoMad_DTLA_002.0.jpg'";
       $('html, body').animate({
           scrollTop: $("#fimg").offset().top
       }, 2000);
     });
 });
 
+$(document).ready(function(){
+    $("#thir").click(function(){
+      $('html, body').animate({
+          scrollTop: $("#secondR").offset().top
+      }, 2000);
+    });
+});
+
 function submit(){
-  var x = document.getElementById("first").value;
+  var x = document.getElementById("second").value;
   document.getElementById("as").style.display = "block";
-    if (x == "Italian") {
+    if (x == " Downtown,LA") {
         // document.getElementById('display').innerHTML = Date();
         console.log(Date());
         document.getElementById("fimg").src = "https://s3-media4.fl.yelpcdn.com/bphoto/7DRvj7sNybLV-FVVIsw6og/o.jpg";
@@ -151,17 +304,41 @@ function submit(){
         <input type="text" id="second" value=" Downtown,LA" autocomplete="on">
         <!-- <input > -->
         <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
-        <i type= "button" name="third" id ="thir" value="Search" onclick="submit()" class="fa fa-search"></i>
+        <i type= "button" name="third" id ="thir" value="Search" class="fa fa-search"></i>
       <p id="display"></p>
       </div>
     </div>
   </div>
 </div>
 
-<div id="as" class="three restauraunt" style = "margin-top: 6%; display: none;">
-  <img id = "fimg" class = "pics" style = "margin-left: 1%;">
-  <img id = "simg" class = "pics">
-  <img id = "timg" class = "pics">
+
+<div id="choose_one" style = "margin-top: 1%; display: block; float: left">
+  <div id="firstDiv" style ="background-image:linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5));">
+    <img id = "firstR" class = "rest" src = "https://cdn.vox-cdn.com/thumbor/YIg1m5s_0bEwMjLoa7lBzZoph20=/0x0:2000x1335/2820x1586/filters:focal(840x508:1160x828):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/58343745/2018_01_14_NoMad_DTLA_002.0.jpg">
+    <div class="left_text">The Mezzanine</div>
+  </div>
+  <div id="secondDiv">
+    <img id = "secondR" onclick="submit()" class = "rest" src = "http://theglutton.net/wp-content/uploads/2014/06/06_ww-us-la-bestia-06.jpg">
+    <div class="center_text">Bestia</div>
+  </div>
+  <div id="thirdDiv">
+    <img id = "thirdR" class = "rest" src = "https://cdn.vox-cdn.com/thumbor/FhoCp492Ftv2L9PQ-VFU8Q8NtaQ=/0x0:2000x1335/1820x1213/filters:focal(840x508:1160x828):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/55533159/2017_05_10_Rossoblu_003.0.jpg">
+    <div class="right_text">Rossoblu</div>
+  </div>
+</div>
+
+
+
+<div id="as" class="three restauraunt" style = "margin-top: 4%; display: none;">
+  <div id="dfirst">
+    <img id = "fimg" class = "pics" style = "margin-left: 1%; margin-top: 1%;">
+    <div class="middle">
+      <div class="text">John Doe</div>
+    </div>
+  </div>
+  <img id = "simg" class = "pics" style = "margin-top: 1%;">
+  <img id = "timg" class = "pics" style = "margin-top: 1%;">
+
   <img id = "fourimg" class = "pics" style = "margin-left: 1%;">
   <img id = "fiveimg" class = "pics">
   <img id = "siximg" class = "pics">
@@ -170,8 +347,10 @@ function submit(){
   <img id = "nineimg" class = "pics">
   <img id = "tenimg" class = "pics" style = "margin-left: 1%;">
   <img id = "elevenimg" class = "pics">
-
-
 </div>
+
+
+
+
 </body>
 </html>
