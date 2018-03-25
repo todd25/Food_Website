@@ -1,8 +1,150 @@
 <html>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 <style>
+
+* {box-sizing: border-box}
+/* Full-width input fields */
+.inpu[type=text], .inpu[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+.inpu[type=text]:focus, .inpu[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for all buttons */
+#but{
+  position: absolute;
+  left: 36%;
+  top: 52%;
+
+}
+
+.but {
+    background-color: DodgerBlue;
+    color: white;
+    padding: 16px 23px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.85;
+}
+
+.but:hover {
+    opacity:1;
+}
+
+/* Extra styles for the cancel button */
+#cancelbtn {
+    /* padding: 14px 20px; */
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+#cancelbtn, #signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+#spin{
+    border: 16px solid #f3f3f3;
+   border-radius: 50%;
+   border-top: 16px solid #3498db;
+   width: 30px;
+   height: 30px;
+   -webkit-animation: spin 2s linear infinite; /* Safari */
+   animation: spin 2s linear infinite;
+   position: absolute;
+   top: 65%;
+   left: 48%;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 body{
   background: #f2f2f2;
@@ -12,15 +154,6 @@ body, html {
     height: 100%;
     margin: 0;
   }
-.text {
-    background-color: #4CAF50;
-    color: white;
-    font-size: 16px;
-    padding: 16px 32px;
-}
-
-
-
 #firstDiv {
     width: 33%;
     height: 100%;
@@ -44,22 +177,12 @@ body, html {
     float: left;
     background-image:linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5));
 }
-
 .rest {
-    /* width: 50%;
-    height: 50%; */
     height: 100%;
     width: auto;
     margin-left: -450px;
     float: left;
-
-    /* margin: 0px, 100px, 100px, 0px */
-    /* width: 32%; */
-    /* position: absolute; */
-    /* height: 100%; */
-    /* clip: rect(0px,300px,500px,0px); */
 }
-
 .homepage {
 
   background-image: linear-gradient( rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.45) ),
@@ -73,12 +196,6 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-/* .title {
-  color: white;
-  text-align: center;
-  margin-top: 40px;
-} */
 .pics {
     max-width: 50%;
     height: auto;
@@ -89,12 +206,10 @@ body, html {
     overflow: hidden;
     vertical-align: top;
 }
-
 .search {
   width: 100%;
   position: relative
 }
-
 #second {
   float: left;
   width: 80%;
@@ -107,11 +222,9 @@ body, html {
   font-size: 23px;
   margin-left: 20px;
 }
-
 #second:focus{
   color: #696969;
 }
-
 #thir {
   background-color: DodgerBlue;
    color: white;
@@ -120,76 +233,212 @@ body, html {
    cursor: pointer;
    /* height: 19px;
    width: 20px; */
-   margin-left: 2px;
+   float: left;
+   /* margin-left: 2px; */
    border-radius: 5px;
    border: 1px solid #7eacf7;
 }
 
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-/*Resize the wrap to see the search bar change!*/
 .bar{
   width: 30%;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 80%;
+  left: 80%;
   transform: translate(-50%, -50%);
 }
-
 #fimg {
   opacity: 1;
   transition: .5s ease;
   backface-visibility: hidden;
 }
 
-#dfirst:hover #fimg {
+
+
+#text1 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 210%;
+    left: 16%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 80px;
+    font-family: "Tangerine", serif;
+}
+#dfirst1:hover #fimg {
   opacity: 0.3;
 }
-
-#dfirst:hover .middle {
+#dfirst1:hover #text1 {
   opacity: 1;
+  transition: .5s ease;
 }
-
+#text2 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 210%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 80px;
+    font-family: "Tangerine", serif;
+}
+#dfirst2:hover #simg {
+  opacity: 0.3;
+}
+#dfirst2:hover #text2 {
+  opacity: 1;
+  transition: .5s ease;
+}
+#text3 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 210%;
+    left: 56%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 80px;
+    font-family: "Tangerine", serif;
+}
+#dfirst3:hover #timg {
+  opacity: 0.3;
+}
+#dfirst3:hover #text3 {
+  opacity: 1;
+  transition: .5s ease;
+}
+#text4 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 240%;
+    left: 16%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 80px;
+    font-family: "Tangerine", serif;
+}
+#dfirst4:hover #fourimg {
+  opacity: 0.3;
+}
+#dfirst4:hover #text4 {
+  opacity: 1;
+  transition: .5s ease;
+}
+#text5 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 240%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 80px;
+    font-family: "Tangerine", serif;
+}
+#dfirst5:hover #fiveimg {
+  opacity: 0.3;
+}
+#dfirst5:hover #text5 {
+  opacity: 1;
+  transition: .5s ease;
+}
+#text6 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 240%;
+    left: 66%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 80px;
+    font-family: "Tangerine", serif;
+}
+#dfirst6:hover #siximg {
+  opacity: 0.3;
+}
+#dfirst6:hover #text6 {
+  opacity: 1;
+  transition: .5s ease;
+}
+#text7 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 270%;
+    left: 16%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 80px;
+    font-family: "Tangerine", serif;
+}
+#dfirst7:hover #sevenimg {
+  opacity: 0.3;
+}
+#dfirst7:hover #text7 {
+  opacity: 1;
+  transition: .5s ease;
+}
+#text8 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 270%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 80px;
+    font-family: "Tangerine", serif;
+}
+#dfirst8:hover #eightimg {
+  opacity: 0.3;
+}
+#dfirst8:hover #text8 {
+  opacity: 1;
+  transition: .5s ease;
+}
+#text9 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 270%;
+    left: 66%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 80px;
+    font-family: "Tangerine", serif;
+}
+#dfirst9:hover #nineimg {
+  opacity: 0.3;
+}
+#dfirst9:hover #text9 {
+  opacity: 1;
+  transition: .5s ease;
+}
 
 #choose_one {
   position: relative;
     /* text-align: center; */
     color: white;
 }
-
-
-/* #firstDiv:hover #secondR {
-  opacity: 0.1;
-  transition: .5s ease;
-}
-#firstDiv:hover  */
-
-
 #firstDiv:hover #firstR {
   opacity: 0.3;
   transition: .5s ease;
 }
-
-
 #firstDiv:hover .left_text {
   opacity: 1;
   transition: .5s ease;
 }
-
-
-
-
-
-
-
 #secondDiv:hover #secondR {
   opacity: 0.3;
   transition: .5s ease;
@@ -198,8 +447,6 @@ body, html {
   opacity: 1;
   transition: .5s ease;
 }
-
-
 #thirdDiv:hover #thirdR {
   opacity: 0.3;
   transition: .5s ease;
@@ -208,8 +455,6 @@ body, html {
   opacity: 1;
   transition: .5s ease;
 }
-
-
 .center_text {
   position: absolute;
   top: 30%;
@@ -237,10 +482,6 @@ body, html {
   font-size: 80px;
   font-family: "Tangerine", serif;
 }
-
-
-
-
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
@@ -249,11 +490,20 @@ body, html {
 $(document).ready(function(){
     $("#secondR").click(function(){
       document.getElementById("firstR").style.backgroundImage = "linear-gradient( rgba(0, 0, 0, 1.30), rgba(0, 0, 0, 1.45)), src = 'https://cdn.vox-cdn.com/thumbor/YIg1m5s_0bEwMjLoa7lBzZoph20=/0x0:2000x1335/2820x1586/filters:focal(840x508:1160x828):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/58343745/2018_01_14_NoMad_DTLA_002.0.jpg'";
-      $('html, body').animate({
-          scrollTop: $("#fimg").offset().top
-      }, 2000);
+      document.getElementById("spin").style.display = "block";
+      setTimeout(spin, 800)
+      setTimeout(unspin, 800)
     });
 });
+
+function spin(){
+  $('html, body').animate({
+      scrollTop: $("#fimg").offset().top
+  }, 500);
+}
+function unspin(){
+  document.getElementById("spin").style.display = "none";
+}
 
 $(document).ready(function(){
     $("#thir").click(function(){
@@ -266,14 +516,14 @@ $(document).ready(function(){
 function submit(){
   var x = document.getElementById("second").value;
   document.getElementById("as").style.display = "block";
-    if (x == " Downtown,LA") {
+    if (x != " Downtown,LA") {
         // document.getElementById('display').innerHTML = Date();
         console.log(Date());
         document.getElementById("fimg").src = "https://s3-media4.fl.yelpcdn.com/bphoto/7DRvj7sNybLV-FVVIsw6og/o.jpg";
         document.getElementById("simg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/uG7gwQQriyufayXmOxinQw/o.jpg";
         document.getElementById("timg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/liI4dg50uWpGbzns_MzgkA/o.jpg";
         document.getElementById("fourimg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/DNyDL1ZnGkMcTBsNwfoZCA/o.jpg";
-        document.getElementById("fiveimg").src = "https://s3-media4.fl.yelpcdn.com/bphoto/pl2qfdmcRpw5p5Y8Oi_VQQ/o.jpg";
+        document.getElementById("fiveimg").src = "https://s3-media2.fl.yelpcdn.com/bphoto/SgqusdzE3gW1oeeuVLVNgw/o.jpg";
         document.getElementById("siximg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/HeQgbqtMOpjsVqMCNEauKw/o.jpg";
         document.getElementById("sevenimg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/DNyDL1ZnGkMcTBsNwfoZCA/o.jpg";
         document.getElementById("eightimg").src = "https://s3-media3.fl.yelpcdn.com/bphoto/DNyDL1ZnGkMcTBsNwfoZCA/o.jpg";
@@ -292,7 +542,7 @@ function submit(){
 <body>
 <div class="homepage">
   <div class="title">
-    <img style ="height: auto; width: 32%; display: block; margin-left: auto; margin-right: auto; padding: 225;" src = "dishit_transparent.png">
+    <img style ="height: auto; width: 62%; display: block; margin-left: auto; margin-right: auto; padding: 155;" src = "dishit_transparent.png">
     <div class="bar">
       <div class="search">
         <select id="first" style="display:none">
@@ -301,16 +551,37 @@ function submit(){
           <option value="Chinese">Chinese</option>
           <option value="Mexican">Mexican</option>
         </select>
-        <input type="text" id="second" value=" Downtown,LA" autocomplete="on">
+        <input type="text" id="second" value=" See what's in Downtown,LA" style="color: #787878;"autocomplete="on">
         <!-- <input > -->
         <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
         <i type= "button" name="third" id ="thir" value="Search" class="fa fa-search"></i>
       <p id="display"></p>
       </div>
     </div>
-  </div>
 </div>
 
+<div id="but">
+  <input type="button" class ="but" onclick="document.getElementById('id01').style.display='block'" style="width:auto; font-size : 20px; "value = "Sign Up Your Email The Lastest Update!">
+</div>
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Sign Up Your Email The Lastest Update!</h1>
+      <p></p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" class= "inpu" placeholder="Enter Email" name="email" required>
+
+      <div class="clearfix">
+        <button  class ="but" type="button" onclick="document.getElementById('id01').style.display='none'" id="cancelbtn">Cancel</button>
+        <button  class ="but" type="submit" onclick="document.getElementById('id01').style.display='none'" id="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+</div>
 
 <div id="choose_one" style = "margin-top: 1%; display: block; float: left">
   <div id="firstDiv" style ="background-image:linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5));">
@@ -320,6 +591,7 @@ function submit(){
   <div id="secondDiv">
     <img id = "secondR" onclick="submit()" class = "rest" src = "http://theglutton.net/wp-content/uploads/2014/06/06_ww-us-la-bestia-06.jpg">
     <div class="center_text">Bestia</div>
+    <div id = "spin" style = "display : none"></div>
   </div>
   <div id="thirdDiv">
     <img id = "thirdR" class = "rest" src = "https://cdn.vox-cdn.com/thumbor/FhoCp492Ftv2L9PQ-VFU8Q8NtaQ=/0x0:2000x1335/1820x1213/filters:focal(840x508:1160x828):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/55533159/2017_05_10_Rossoblu_003.0.jpg">
@@ -329,26 +601,54 @@ function submit(){
 
 
 
-<div id="as" class="three restauraunt" style = "margin-top: 4%; display: none;">
-  <div id="dfirst">
-    <img id = "fimg" class = "pics" style = "margin-left: 1%; margin-top: 1%;">
-    <div class="middle">
-      <div class="text">John Doe</div>
-    </div>
+<div id="as" class="dishes" style = "margin-top: 4%; display: none;">
+
+  <div id="dfirst1">
+    <img id = "fimg" class = "pics" style = "margin-left: 1%; margin-top: 1%;" title="Smiley face">
+    <div id="text1" style="position: absolute; top: 225%; left: 15%;width: 20%">Cavatelli alla Norcina with truffles and sausage</div>
   </div>
-  <img id = "simg" class = "pics" style = "margin-top: 1%;">
-  <img id = "timg" class = "pics" style = "margin-top: 1%;">
 
-  <img id = "fourimg" class = "pics" style = "margin-left: 1%;">
-  <img id = "fiveimg" class = "pics">
-  <img id = "siximg" class = "pics">
-  <img id = "sevenimg" class = "pics" style = "margin-left: 1%;">
-  <img id = "eightimg" class = "pics">
-  <img id = "nineimg" class = "pics">
-  <img id = "tenimg" class = "pics" style = "margin-left: 1%;">
-  <img id = "elevenimg" class = "pics">
+  <div id="dfirst2">
+    <img id = "simg" class = "pics" style = "margin-top: 1%;">
+    <div id="text2" style="position: absolute; top: 220%; left: 49.5%;width: 20%">Spaghetti Rustichella</div>
+  </div>
+
+  <div id="dfirst3">
+    <img id = "timg" class = "pics" style = "margin-top: 1%;">
+    <div id="text3" style="position: absolute; top: 220%;left: 82%;width: 20%">Lobster Crostino</div>
+  </div>
+
+  <div id="dfirst4">
+    <img id = "fourimg" class = "pics" style = "margin-left: 1%;">
+    <div id="text4" style="position: absolute; top: 265%;left: 15%;width: 20%">Bittersweet Chocolate Budino Tart</div>
+  </div>
+
+  <div id="dfirst5">
+    <img id = "fiveimg" class = "pics">
+    <div id="text5" style="position: absolute; top: 265%;left: 49.5%;width: 20%">Alla’nduja Pizza</div>
+  </div>
+
+  <div id="dfirst6">
+    <img id = "siximg" class = "pics">
+    <div id="text6" style="position: absolute; top: 264%;left:82%; width: 20%">Radishes</div>
+  </div>
+
+  <!-- <div id="dfirst7">
+    <img id = "sevenimg" class = "pics" style = "margin-left: 1%;">
+    <div id="text7">Diss</div>
+  </div>
+
+  <div id="dfirst8">
+    <img id = "eightimg" class = "pics">
+    <div id="text8">Diss</div>
+  </div>
+
+  <div id="dfirst9">
+    <img id = "nineimg" class = "pics">
+    <div id="text9">Diss</div>
+  </div> -->
+
 </div>
-
 
 
 
