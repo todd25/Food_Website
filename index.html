@@ -1,10 +1,37 @@
 <html>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 <style>
 
 * {box-sizing: border-box}
 /* Full-width input fields */
+
+#oneline{
+  position: absolute;
+  left: 9%;
+  top: 42%;
+  font-family: Indie Flower;
+  font-size:      60px;
+  color: white;
+  /* padding: 15px; */
+  /* background-color: dodgerblue; */
+  opacity: 0.95;
+}
+
+#title {
+  height: auto;
+  width: 45%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  left: 27%;
+  top: 22%;
+  /* padding: 155; */
+}
+
+
 .inpu[type=text], .inpu[type=password] {
     width: 100%;
     padding: 15px;
@@ -23,9 +50,8 @@
 /* Set a style for all buttons */
 #but{
   position: absolute;
-  left: 36%;
-  top: 52%;
-
+  left: 35%;
+  top: 55%;
 }
 
 .but {
@@ -36,6 +62,8 @@
     cursor: pointer;
     width: 100%;
     opacity: 0.85;
+    border-radius: 4px;
+    /* border-top: 3px solid #3498db; */
 }
 
 .but:hover {
@@ -185,7 +213,7 @@ body, html {
 }
 .homepage {
 
-  background-image: linear-gradient( rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.45) ),
+  background-image: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.35) ),
   url("https://static1.squarespace.com/static/5685a06669492ea07bb9b05d/t/5702d1922b8ddeaf55815b1f/1459802521539/Angel+Food-+High+Res-6766.jpg");
 
   /* Full height */
@@ -542,7 +570,7 @@ function submit(){
 <body>
 <div class="homepage">
   <div class="title">
-    <img style ="height: auto; width: 62%; display: block; margin-left: auto; margin-right: auto; padding: 155;" src = "dishit_transparent.png">
+    <img id="title" src = "dishit_transparent.png">
     <div class="bar">
       <div class="search">
         <select id="first" style="display:none">
@@ -563,6 +591,7 @@ function submit(){
 <div id="but">
   <input type="button" class ="but" onclick="document.getElementById('id01').style.display='block'" style="width:auto; font-size : 20px; "value = "Sign Up Your Email The Lastest Update!">
 </div>
+<div id="oneline">DECIDES YOUR FAVORITE DISH IN 10 SECONDS</div>
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
   <form class="modal-content" action="/action_page.php">
